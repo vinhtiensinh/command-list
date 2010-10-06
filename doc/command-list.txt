@@ -178,6 +178,18 @@ so if you slt you can skip the list and jump directly to line 10
 if you dont remember the shortcut exactly, you can just type sl do diplay the list
 then choose your command
 
+If you set up the map for the list, you can use the map shortcut to display
+the shortcut or you can do it manually in your .vimrc as follow
+
+map mapkey :ruby CommandList::display_command_list('Jump')<CR>
+
+you can add multiple list into a single display by adding it to the parameters
+of the display_command_list call. For example:
+
+map mapkey :ruby CommandList::display_command_list('Jump', 'Format')<CR>
+
+If no parameters is given, all the list will be displayed
+
 There is a sample file: plugin/command-list.rb.sample for your reference.
 
 ==============================================================================
